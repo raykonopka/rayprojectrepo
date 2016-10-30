@@ -8,5 +8,6 @@ namespace RegistrationApp
 {
     class RegistrationApp
     {
+        int test;
     }
 }
