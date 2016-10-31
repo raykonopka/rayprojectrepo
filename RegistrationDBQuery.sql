@@ -42,9 +42,10 @@ CREATE TABLE Registration.CourseSessions
 (
     Id INT not null IDENTITY(1,1)
     ,CourseId INT not null
-    ,Professor INT not null 
-	,StartTime DATETIME not null 
-	,EndTime DATETIME not null
+    ,Professor NVARCHAR(250) not null 
+	,StartTime TIME not null 
+	,EndTime TIME not null
+	,DaysInSession NVARCHAR(10) not null
 	,Capacity INT null 
 );
 
