@@ -280,3 +280,5 @@ __pycache__/
 build/
 /MonsterApp/MonsterApp.DataAccess/App.config
 /MonsterApp/MonsterApp.Tests/App.config
+/RegistrationApp/RegistrationApp/App.config
+/RegistrationApp/RegistrationApp.Tests/App.config
