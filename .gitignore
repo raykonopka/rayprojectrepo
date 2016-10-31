@@ -240,3 +240,8 @@ ModelManifest.xml
 
 # FAKE - F# Make
 .fake/
+
+### VisualStudio Patch ###
+build/
+/MonsterApp/MonsterApp.DataAccess/App.config
+/MonsterApp/MonsterApp.Tests/App.config
