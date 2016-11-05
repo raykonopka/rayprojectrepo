@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RegistrationApp.Models;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Diagnostics;
@@ -11,6 +12,9 @@ namespace RegistrationApp.DataAccess
     public partial class EfData
     {
         private RegistrationDBEntities1 db = new RegistrationDBEntities1();
+        private List<CourseBookmark> courseBookmarks = new List<CourseBookmark>();
+
+        //General Data Access
 
         #region Students Data Access
         public List<Student> GetStudents()
@@ -88,6 +92,28 @@ namespace RegistrationApp.DataAccess
                 return false;
             }
         }
+
+        public bool removeSchedule(Schedule scheduleToRemove)
+        {
+            List<Schedule> allSchedules = db.Schedules.ToList();
+
+            var currentStudentSchedule = allSchedules.Where(s => s.StudentId.Equals(scheduleToRemove.StudentId));
+            if (currentStudentSchedule.Count() == 0)
+            {
+                Debug.WriteLine("Student is not registered for any courses.");
+                return false;
+            }
+
+            var schedulesToDrop = currentStudentSchedule.Where(i => i.CourseSessionId.Equals(scheduleToRemove.CourseSessionId));
+            if (schedulesToDrop.Count() == 0)
+            {
+                Debug.WriteLine("Student is not registered the specified course.");
+                return false;
+            }
+
+            db.Schedules.Remove(schedulesToDrop.First());
+            return db.SaveChanges() > 0;
+        }
         #endregion
 
 
@@ -111,6 +137,23 @@ namespace RegistrationApp.DataAccess
             else
             {
                 Debug.WriteLine("Invalid course id.");
+                return false;
+            }
+        }
+
+        public bool RemoveSession(CourseSession session)
+        {
+            var matchingSessions = db.CourseSessions.Where(cs => cs.Id.Equals(session.Id));
+
+            if (matchingSessions.Count() > 0)
+            {
+                db.CourseSessions.Remove(matchingSessions.First());
+                return db.SaveChanges() > 0;
+            }
+
+            else
+            {
+                Debug.WriteLine("Course does not exist.");
                 return false;
             }
         }
@@ -140,9 +183,27 @@ namespace RegistrationApp.DataAccess
                 return false;
             }
         }
+
+
+        public bool CancelCourse(Course course)
+        {
+            var matchingCourses = db.Courses.Where(c => c.Id.Equals(course.Id));
+
+            if (matchingCourses.Count() > 0)
+            {
+                db.Courses.Remove(matchingCourses.First());
+                return db.SaveChanges() > 0;
+            }
+
+            else
+            {
+                Debug.WriteLine("Course does not exist.");
+                return false;
+            }
+        }
         #endregion
 
-        
+
         #region Departments Data Access
         public List<Department> GetDepartments()
         {
@@ -169,9 +230,11 @@ namespace RegistrationApp.DataAccess
         #endregion
 
 
-        #region RegistrationDB Functions
-        //Register student for course
-        public bool registerStudent(int studentId, int sessionId)
+
+        // Additional Data Access Functionality
+
+        #region Register Student for Session
+        public bool RegisterStudent(int studentId, int sessionId)
         {
             List<Schedule> allSchedules = GetSchedules();
             var currentStudentSchedule = allSchedules.Where(s => s.StudentId.Equals(studentId));
@@ -184,7 +247,7 @@ namespace RegistrationApp.DataAccess
             bool timeConflict;
             timeConflict = false;
             foreach (Schedule scheduleEntry in currentStudentSchedule)
-            {
+            { 
                 if (scheduleEntry.CourseSession.DaysInSession == session.DaysInSession)
                 {
                     if (
@@ -206,10 +269,112 @@ namespace RegistrationApp.DataAccess
             else
             {
                 Schedule registrationEntry = new Schedule() { StudentId = studentId, CourseSessionId = sessionId };
-                db.Schedules.Add(registrationEntry);
-                return db.SaveChanges() > 0;
+                return InsertSchedule(registrationEntry);
             }
         }
         #endregion
+
+
+        #region Drop Student From Session
+        public bool DropFromSession(int studentId, int sessionId)
+        {
+            Schedule scheduleToDrop = new Schedule { StudentId = studentId, CourseSessionId = sessionId };
+
+            return removeSchedule(scheduleToDrop);
+        }
+        #endregion
+
+
+        #region Update Session Time
+        public bool UpdateSessionTime(TimeSpan startTime, TimeSpan endTime, int sessionId)
+        {
+            var matchingSessions = db.CourseSessions.Where(cs => cs.Id.Equals(sessionId));
+
+            if (matchingSessions.Count() > 0)
+            {
+                CourseSession sessionToUpdate = matchingSessions.First();
+
+                sessionToUpdate.StartTime = startTime;
+                sessionToUpdate.EndTime = endTime;
+                return db.SaveChanges() > 0;
+            }
+
+            else
+            {
+                Debug.WriteLine("Invalid session id.");
+                return false;
+            }
+
+        }
+        #endregion
+
+
+        #region Update Session Capacity
+        public bool UpdateSessionCapacity(int newCapacity, int sessionId)
+        {
+            var matchingSessions = db.CourseSessions.Where(cs => cs.Id.Equals(sessionId));
+
+            if (matchingSessions.Count() > 0)
+            {
+                CourseSession sessionToUpdate = matchingSessions.First();
+
+                sessionToUpdate.Capacity = newCapacity;
+                return db.SaveChanges() > 0;
+            }
+
+            else
+            {
+                Debug.WriteLine("Invalid session id.");
+                return false;
+            }
+
+        }
+        #endregion
+
+
+        #region Add A Course Bookmark
+        public bool AddCourseBookmark(int studentId, int sessionId)
+        {
+            var matchingStudents = db.Students.Where(s => s.Id.Equals(studentId));
+            var matchingSessions = db.CourseSessions.Where(s => s.Id.Equals(sessionId));
+
+            if ((matchingStudents.Count() == 1) && (matchingSessions.Count() == 1))
+            {
+                CourseBookmark newCourseBookmark = new CourseBookmark { studentId = studentId, courseSessionId = sessionId };
+                courseBookmarks.Add(newCourseBookmark);
+                return true;
+            }
+
+            else
+            {
+                Debug.WriteLine("Invalid student id or invalid session id.");
+                return false;
+            }
+        }
+        #endregion
+
+
+        #region Remove A Course Bookmark
+        public bool RemoveCourseBookmark(CourseBookmark bookmarkToRemove)
+        {
+            var matchingStudents = db.Students.Where(s => s.Id.Equals(bookmarkToRemove.studentId));
+            var matchingSessions = db.CourseSessions.Where(s => s.Id.Equals(bookmarkToRemove.courseSessionId));
+
+            if ((matchingStudents.Count() == 1) && (matchingSessions.Count() == 1))
+            {
+                courseBookmarks.Remove(bookmarkToRemove);
+                return true;
+            }
+
+            else
+            {
+                Debug.WriteLine("Invalid student id or invalid session id.");
+                return false;
+            } 
+        }
+        #endregion
+
+
+
     }
 }

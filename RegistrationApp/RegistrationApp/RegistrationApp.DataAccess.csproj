@@ -64,6 +64,7 @@
     <Compile Include="Major.cs">
       <DependentUpon>RegistrationAppModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\CourseBookmark.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RegistrationAppModel.Context.cs">
       <AutoGen>True</AutoGen>
