@@ -3,7 +3,7 @@
 <asp:Content ID="MainContent" ContentPlaceHolderID="MainSection" runat="server" >
 
 <div style="text-align:center;">
-    <h2>Registrar Login</h2>
+    <h1>Registrar Login</h1>
     <form runat="server">
         <asp:Label runat="server">Username:</asp:Label>
         <asp:TextBox runat="server" ID="Username"></asp:TextBox>

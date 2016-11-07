@@ -4,7 +4,7 @@
 <asp:Content ID="MainContent" ContentPlaceHolderID="MainSection" runat="server">
 
     <div style="text-align:center;">
-        <h2>Login</h2>
+        <h1>Select Login</h1>
         <form runat="server">
             <asp:Button runat="server" ID="StudentLogin" OnClick ="StudentLogin_Click" Text="Student Login"/>
             <div style="margin-bottom:20px;"></div>

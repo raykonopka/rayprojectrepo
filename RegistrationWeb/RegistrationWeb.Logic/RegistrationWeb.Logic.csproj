@@ -56,7 +56,25 @@
   <ItemGroup>
     <None Include="app.config" />
     <None Include="Service References\RegistrationServiceReference\RegistrationDataService.wsdl" />
+    <None Include="Service References\RegistrationServiceReference\RegistrationWeb.Logic.RegistrationServiceReference.BookmarkedSessionDAO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RegistrationServiceReference\RegistrationWeb.Logic.RegistrationServiceReference.CourseDAO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RegistrationServiceReference\RegistrationWeb.Logic.RegistrationServiceReference.CourseSessionDAO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RegistrationServiceReference\RegistrationWeb.Logic.RegistrationServiceReference.RegistrarUserDAO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RegistrationServiceReference\RegistrationWeb.Logic.RegistrationServiceReference.ScheduleDAO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\RegistrationServiceReference\RegistrationWeb.Logic.RegistrationServiceReference.StudentDAO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RegistrationServiceReference\RegistrationWeb.Logic.RegistrationServiceReference.StudentUserDAO.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
   </ItemGroup>

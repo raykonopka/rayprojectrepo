@@ -5,13 +5,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head runat="server">
         <title>Course Registration</title>
+        
     </head>
 
     <body>
         <asp:ContentPlaceHolder ID="MainSection" runat="server"> </asp:ContentPlaceHolder>
     
         <div id="footerContent" style="text-align:center;">
-            <p>Copyright 2016</p>
+            <p>&copy 2016 RegistrationDB</p>
         </div>
     </body>
 </html>

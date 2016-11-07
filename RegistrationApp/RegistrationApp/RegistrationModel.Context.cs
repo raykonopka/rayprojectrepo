@@ -13,10 +13,10 @@ namespace RegistrationApp
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class RegistrationDBEntities1 : DbContext
+    public partial class RegistrationDBEntities : DbContext
     {
-        public RegistrationDBEntities1()
-            : base("name=RegistrationDBEntities1")
+        public RegistrationDBEntities()
+            : base("name=RegistrationDBEntities")
         {
         }
     
@@ -25,11 +25,14 @@ namespace RegistrationApp
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<BookmarkedSession> BookmarkedSessions { get; set; }
         public virtual DbSet<Course> Courses { get; set; }
         public virtual DbSet<CourseSession> CourseSessions { get; set; }
         public virtual DbSet<Department> Departments { get; set; }
         public virtual DbSet<Major> Majors { get; set; }
+        public virtual DbSet<RegistrarUser> RegistrarUsers { get; set; }
         public virtual DbSet<Schedule> Schedules { get; set; }
         public virtual DbSet<Student> Students { get; set; }
+        public virtual DbSet<StudentUser> StudentUsers { get; set; }
     }
 }

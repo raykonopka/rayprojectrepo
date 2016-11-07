@@ -15,6 +15,220 @@
           </xs:sequence>
         </xs:complexType>
       </xs:element>
+      <xs:element name="GetStudentsUsers">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetStudentsUsersResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/RegistrationApp.DataClient.Models" minOccurs="0" name="GetStudentsUsersResult" nillable="true" type="q2:ArrayOfStudentUserDAO" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetRegistrarUsers">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetRegistrarUsersResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/RegistrationApp.DataClient.Models" minOccurs="0" name="GetRegistrarUsersResult" nillable="true" type="q3:ArrayOfRegistrarUserDAO" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetCourses">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetCoursesResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/RegistrationApp.DataClient.Models" minOccurs="0" name="GetCoursesResult" nillable="true" type="q4:ArrayOfCourseDAO" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetSessions">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetSessionsResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/RegistrationApp.DataClient.Models" minOccurs="0" name="GetSessionsResult" nillable="true" type="q5:ArrayOfCourseSessionDAO" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="RegisterStudent">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="studentId" type="xs:int" />
+            <xs:element minOccurs="0" name="sessionId" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="RegisterStudentResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="RegisterStudentResult" type="xs:boolean" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DropFromSession">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="studentId" type="xs:int" />
+            <xs:element minOccurs="0" name="sessionId" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DropFromSessionResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="DropFromSessionResult" type="xs:boolean" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="AddCourseBookmark">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/RegistrationApp.DataClient.Models" minOccurs="0" name="bookmarkToAdd" nillable="true" type="q6:BookmarkedSessionDAO" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="AddCourseBookmarkResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="AddCourseBookmarkResult" type="xs:boolean" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="RemoveCourseBookmark">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/RegistrationApp.DataClient.Models" minOccurs="0" name="bookmarkToRemove" nillable="true" type="q7:BookmarkedSessionDAO" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="RemoveCourseBookmarkResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="RemoveCourseBookmarkResult" type="xs:boolean" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetBookmarks">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetBookmarksResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/RegistrationApp.DataClient.Models" minOccurs="0" name="GetBookmarksResult" nillable="true" type="q8:ArrayOfBookmarkedSessionDAO" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetSchedules">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetSchedulesResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/RegistrationApp.DataClient.Models" minOccurs="0" name="GetSchedulesResult" nillable="true" type="q9:ArrayOfScheduleDAO" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="InsertCourse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/RegistrationApp.DataClient.Models" minOccurs="0" name="course" nillable="true" type="q10:CourseDAO" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="InsertCourseResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="InsertCourseResult" type="xs:boolean" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CancelCourse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/RegistrationApp.DataClient.Models" minOccurs="0" name="course" nillable="true" type="q11:CourseDAO" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CancelCourseResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="CancelCourseResult" type="xs:boolean" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="InsertStudent">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/RegistrationApp.DataClient.Models" minOccurs="0" name="student" nillable="true" type="q12:StudentDAO" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="InsertStudentResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="InsertStudentResult" type="xs:boolean" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="RemoveStudent">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/RegistrationApp.DataClient.Models" minOccurs="0" name="student" nillable="true" type="q13:StudentDAO" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="RemoveStudentResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="RemoveStudentResult" type="xs:boolean" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetStudentSchedule">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="studentId" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetStudentScheduleResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/RegistrationApp.DataClient.Models" minOccurs="0" name="GetStudentScheduleResult" nillable="true" type="q14:ArrayOfCourseSessionDAO" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ListEnrolledStudents">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="sessionId" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ListEnrolledStudentsResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/RegistrationApp.DataClient.Models" minOccurs="0" name="ListEnrolledStudentsResult" nillable="true" type="q15:ArrayOfStudentDAO" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
     </xs:schema>
     <xs:schema xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
       <xs:element name="anyType" nillable="true" type="xs:anyType" />
@@ -57,7 +271,8 @@
       <xs:attribute name="Id" type="xs:ID" />
       <xs:attribute name="Ref" type="xs:IDREF" />
     </xs:schema>
-    <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/RegistrationApp.DataClient.Models" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/RegistrationApp.DataClient.Models" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/RegistrationApp.DataClient.Models" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/RegistrationApp.DataClient.Models" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
       <xs:complexType name="ArrayOfStudentDAO">
         <xs:sequence>
           <xs:element minOccurs="0" maxOccurs="unbounded" name="StudentDAO" nillable="true" type="tns:StudentDAO" />
@@ -72,6 +287,96 @@
         </xs:sequence>
       </xs:complexType>
       <xs:element name="StudentDAO" nillable="true" type="tns:StudentDAO" />
+      <xs:complexType name="ArrayOfStudentUserDAO">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="StudentUserDAO" nillable="true" type="tns:StudentUserDAO" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfStudentUserDAO" nillable="true" type="tns:ArrayOfStudentUserDAO" />
+      <xs:complexType name="StudentUserDAO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Id" type="xs:int" />
+          <xs:element minOccurs="0" name="StudentId" type="xs:int" />
+          <xs:element minOccurs="0" name="UserPassword" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Username" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="StudentUserDAO" nillable="true" type="tns:StudentUserDAO" />
+      <xs:complexType name="ArrayOfRegistrarUserDAO">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="RegistrarUserDAO" nillable="true" type="tns:RegistrarUserDAO" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfRegistrarUserDAO" nillable="true" type="tns:ArrayOfRegistrarUserDAO" />
+      <xs:complexType name="RegistrarUserDAO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Id" type="xs:int" />
+          <xs:element minOccurs="0" name="UserPassword" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Username" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="RegistrarUserDAO" nillable="true" type="tns:RegistrarUserDAO" />
+      <xs:complexType name="ArrayOfCourseDAO">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="CourseDAO" nillable="true" type="tns:CourseDAO" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfCourseDAO" nillable="true" type="tns:ArrayOfCourseDAO" />
+      <xs:complexType name="CourseDAO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Credits" type="xs:int" />
+          <xs:element minOccurs="0" name="DepartmentId" type="xs:int" />
+          <xs:element minOccurs="0" name="Id" type="xs:int" />
+          <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="CourseDAO" nillable="true" type="tns:CourseDAO" />
+      <xs:complexType name="ArrayOfCourseSessionDAO">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="CourseSessionDAO" nillable="true" type="tns:CourseSessionDAO" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfCourseSessionDAO" nillable="true" type="tns:ArrayOfCourseSessionDAO" />
+      <xs:complexType name="CourseSessionDAO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Capacity" type="xs:int" />
+          <xs:element minOccurs="0" name="CourseId" type="xs:int" />
+          <xs:element minOccurs="0" name="DaysInSession" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EndTime" type="ser:duration" />
+          <xs:element minOccurs="0" name="Id" type="xs:int" />
+          <xs:element minOccurs="0" name="Professor" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="StartTime" type="ser:duration" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="CourseSessionDAO" nillable="true" type="tns:CourseSessionDAO" />
+      <xs:complexType name="BookmarkedSessionDAO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Id" type="xs:int" />
+          <xs:element minOccurs="0" name="SessionId" type="xs:int" />
+          <xs:element minOccurs="0" name="StudentUserId" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="BookmarkedSessionDAO" nillable="true" type="tns:BookmarkedSessionDAO" />
+      <xs:complexType name="ArrayOfBookmarkedSessionDAO">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="BookmarkedSessionDAO" nillable="true" type="tns:BookmarkedSessionDAO" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfBookmarkedSessionDAO" nillable="true" type="tns:ArrayOfBookmarkedSessionDAO" />
+      <xs:complexType name="ArrayOfScheduleDAO">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="ScheduleDAO" nillable="true" type="tns:ScheduleDAO" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfScheduleDAO" nillable="true" type="tns:ArrayOfScheduleDAO" />
+      <xs:complexType name="ScheduleDAO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CourseSessionId" type="xs:int" />
+          <xs:element minOccurs="0" name="Id" type="xs:int" />
+          <xs:element minOccurs="0" name="StudentId" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ScheduleDAO" nillable="true" type="tns:ScheduleDAO" />
     </xs:schema>
   </wsdl:types>
   <wsdl:message name="IRegistrationDataService_GetStudents_InputMessage">
@@ -80,16 +385,320 @@
   <wsdl:message name="IRegistrationDataService_GetStudents_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetStudentsResponse" />
   </wsdl:message>
+  <wsdl:message name="IRegistrationDataService_GetStudentsUsers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetStudentsUsers" />
+  </wsdl:message>
+  <wsdl:message name="IRegistrationDataService_GetStudentsUsers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetStudentsUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRegistrationDataService_GetRegistrarUsers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRegistrarUsers" />
+  </wsdl:message>
+  <wsdl:message name="IRegistrationDataService_GetRegistrarUsers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRegistrarUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRegistrationDataService_GetCourses_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCourses" />
+  </wsdl:message>
+  <wsdl:message name="IRegistrationDataService_GetCourses_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCoursesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRegistrationDataService_GetSessions_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSessions" />
+  </wsdl:message>
+  <wsdl:message name="IRegistrationDataService_GetSessions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSessionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRegistrationDataService_RegisterStudent_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterStudent" />
+  </wsdl:message>
+  <wsdl:message name="IRegistrationDataService_RegisterStudent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterStudentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRegistrationDataService_DropFromSession_InputMessage">
+    <wsdl:part name="parameters" element="tns:DropFromSession" />
+  </wsdl:message>
+  <wsdl:message name="IRegistrationDataService_DropFromSession_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DropFromSessionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRegistrationDataService_AddCourseBookmark_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddCourseBookmark" />
+  </wsdl:message>
+  <wsdl:message name="IRegistrationDataService_AddCourseBookmark_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddCourseBookmarkResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRegistrationDataService_RemoveCourseBookmark_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveCourseBookmark" />
+  </wsdl:message>
+  <wsdl:message name="IRegistrationDataService_RemoveCourseBookmark_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveCourseBookmarkResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRegistrationDataService_GetBookmarks_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBookmarks" />
+  </wsdl:message>
+  <wsdl:message name="IRegistrationDataService_GetBookmarks_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBookmarksResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRegistrationDataService_GetSchedules_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSchedules" />
+  </wsdl:message>
+  <wsdl:message name="IRegistrationDataService_GetSchedules_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSchedulesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRegistrationDataService_InsertCourse_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertCourse" />
+  </wsdl:message>
+  <wsdl:message name="IRegistrationDataService_InsertCourse_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertCourseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRegistrationDataService_CancelCourse_InputMessage">
+    <wsdl:part name="parameters" element="tns:CancelCourse" />
+  </wsdl:message>
+  <wsdl:message name="IRegistrationDataService_CancelCourse_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CancelCourseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRegistrationDataService_InsertStudent_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertStudent" />
+  </wsdl:message>
+  <wsdl:message name="IRegistrationDataService_InsertStudent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertStudentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRegistrationDataService_RemoveStudent_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveStudent" />
+  </wsdl:message>
+  <wsdl:message name="IRegistrationDataService_RemoveStudent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveStudentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRegistrationDataService_GetStudentSchedule_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetStudentSchedule" />
+  </wsdl:message>
+  <wsdl:message name="IRegistrationDataService_GetStudentSchedule_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetStudentScheduleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRegistrationDataService_ListEnrolledStudents_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListEnrolledStudents" />
+  </wsdl:message>
+  <wsdl:message name="IRegistrationDataService_ListEnrolledStudents_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListEnrolledStudentsResponse" />
+  </wsdl:message>
   <wsdl:portType name="IRegistrationDataService">
     <wsdl:operation name="GetStudents">
       <wsdl:input wsaw:Action="http://tempuri.org/IRegistrationDataService/GetStudents" message="tns:IRegistrationDataService_GetStudents_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IRegistrationDataService/GetStudentsResponse" message="tns:IRegistrationDataService_GetStudents_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStudentsUsers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRegistrationDataService/GetStudentsUsers" message="tns:IRegistrationDataService_GetStudentsUsers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRegistrationDataService/GetStudentsUsersResponse" message="tns:IRegistrationDataService_GetStudentsUsers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRegistrarUsers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRegistrationDataService/GetRegistrarUsers" message="tns:IRegistrationDataService_GetRegistrarUsers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRegistrationDataService/GetRegistrarUsersResponse" message="tns:IRegistrationDataService_GetRegistrarUsers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCourses">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRegistrationDataService/GetCourses" message="tns:IRegistrationDataService_GetCourses_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRegistrationDataService/GetCoursesResponse" message="tns:IRegistrationDataService_GetCourses_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSessions">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRegistrationDataService/GetSessions" message="tns:IRegistrationDataService_GetSessions_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRegistrationDataService/GetSessionsResponse" message="tns:IRegistrationDataService_GetSessions_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegisterStudent">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRegistrationDataService/RegisterStudent" message="tns:IRegistrationDataService_RegisterStudent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRegistrationDataService/RegisterStudentResponse" message="tns:IRegistrationDataService_RegisterStudent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DropFromSession">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRegistrationDataService/DropFromSession" message="tns:IRegistrationDataService_DropFromSession_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRegistrationDataService/DropFromSessionResponse" message="tns:IRegistrationDataService_DropFromSession_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddCourseBookmark">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRegistrationDataService/AddCourseBookmark" message="tns:IRegistrationDataService_AddCourseBookmark_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRegistrationDataService/AddCourseBookmarkResponse" message="tns:IRegistrationDataService_AddCourseBookmark_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveCourseBookmark">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRegistrationDataService/RemoveCourseBookmark" message="tns:IRegistrationDataService_RemoveCourseBookmark_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRegistrationDataService/RemoveCourseBookmarkResponse" message="tns:IRegistrationDataService_RemoveCourseBookmark_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBookmarks">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRegistrationDataService/GetBookmarks" message="tns:IRegistrationDataService_GetBookmarks_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRegistrationDataService/GetBookmarksResponse" message="tns:IRegistrationDataService_GetBookmarks_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSchedules">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRegistrationDataService/GetSchedules" message="tns:IRegistrationDataService_GetSchedules_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRegistrationDataService/GetSchedulesResponse" message="tns:IRegistrationDataService_GetSchedules_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertCourse">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRegistrationDataService/InsertCourse" message="tns:IRegistrationDataService_InsertCourse_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRegistrationDataService/InsertCourseResponse" message="tns:IRegistrationDataService_InsertCourse_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CancelCourse">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRegistrationDataService/CancelCourse" message="tns:IRegistrationDataService_CancelCourse_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRegistrationDataService/CancelCourseResponse" message="tns:IRegistrationDataService_CancelCourse_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertStudent">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRegistrationDataService/InsertStudent" message="tns:IRegistrationDataService_InsertStudent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRegistrationDataService/InsertStudentResponse" message="tns:IRegistrationDataService_InsertStudent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveStudent">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRegistrationDataService/RemoveStudent" message="tns:IRegistrationDataService_RemoveStudent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRegistrationDataService/RemoveStudentResponse" message="tns:IRegistrationDataService_RemoveStudent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStudentSchedule">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRegistrationDataService/GetStudentSchedule" message="tns:IRegistrationDataService_GetStudentSchedule_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRegistrationDataService/GetStudentScheduleResponse" message="tns:IRegistrationDataService_GetStudentSchedule_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListEnrolledStudents">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRegistrationDataService/ListEnrolledStudents" message="tns:IRegistrationDataService_ListEnrolledStudents_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRegistrationDataService/ListEnrolledStudentsResponse" message="tns:IRegistrationDataService_ListEnrolledStudents_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IRegistrationDataService" type="tns:IRegistrationDataService">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="GetStudents">
       <soap:operation soapAction="http://tempuri.org/IRegistrationDataService/GetStudents" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStudentsUsers">
+      <soap:operation soapAction="http://tempuri.org/IRegistrationDataService/GetStudentsUsers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRegistrarUsers">
+      <soap:operation soapAction="http://tempuri.org/IRegistrationDataService/GetRegistrarUsers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCourses">
+      <soap:operation soapAction="http://tempuri.org/IRegistrationDataService/GetCourses" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSessions">
+      <soap:operation soapAction="http://tempuri.org/IRegistrationDataService/GetSessions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegisterStudent">
+      <soap:operation soapAction="http://tempuri.org/IRegistrationDataService/RegisterStudent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DropFromSession">
+      <soap:operation soapAction="http://tempuri.org/IRegistrationDataService/DropFromSession" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddCourseBookmark">
+      <soap:operation soapAction="http://tempuri.org/IRegistrationDataService/AddCourseBookmark" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveCourseBookmark">
+      <soap:operation soapAction="http://tempuri.org/IRegistrationDataService/RemoveCourseBookmark" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBookmarks">
+      <soap:operation soapAction="http://tempuri.org/IRegistrationDataService/GetBookmarks" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSchedules">
+      <soap:operation soapAction="http://tempuri.org/IRegistrationDataService/GetSchedules" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertCourse">
+      <soap:operation soapAction="http://tempuri.org/IRegistrationDataService/InsertCourse" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelCourse">
+      <soap:operation soapAction="http://tempuri.org/IRegistrationDataService/CancelCourse" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertStudent">
+      <soap:operation soapAction="http://tempuri.org/IRegistrationDataService/InsertStudent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveStudent">
+      <soap:operation soapAction="http://tempuri.org/IRegistrationDataService/RemoveStudent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStudentSchedule">
+      <soap:operation soapAction="http://tempuri.org/IRegistrationDataService/GetStudentSchedule" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListEnrolledStudents">
+      <soap:operation soapAction="http://tempuri.org/IRegistrationDataService/ListEnrolledStudents" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

@@ -100,6 +100,49 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Properties\DataSources\RegistrationWeb.Logic.RegistrationServiceReference.StudentDAO1.datasource" />
+    <Content Include="Properties\DataSources\RegistrationWeb.Logic.RegistrationServiceReference.RegistrarUserDAO.datasource" />
+    <Content Include="Properties\DataSources\RegistrationWeb.Logic.RegistrationServiceReference.StudentDAO2.datasource" />
+    <Content Include="Properties\DataSources\RegistrationWeb.Logic.RegistrationServiceReference.StudentUserDAO.datasource" />
+    <Content Include="Properties\DataSources\RegistrationWeb.Logic.RegistrationServiceReference.CourseDAO.datasource" />
+    <Content Include="Properties\DataSources\RegistrationWeb.Logic.RegistrationServiceReference.StudentDAO3.datasource" />
+    <Content Include="Properties\DataSources\RegistrationWeb.Logic.RegistrationServiceReference.CourseDAO1.datasource" />
+    <Content Include="Properties\DataSources\RegistrationWeb.Logic.RegistrationServiceReference.CourseSessionDAO.datasource" />
+    <Content Include="Properties\DataSources\RegistrationWeb.Logic.RegistrationServiceReference.RegistrarUserDAO1.datasource" />
+    <Content Include="Properties\DataSources\RegistrationWeb.Logic.RegistrationServiceReference.StudentDAO4.datasource" />
+    <Content Include="Properties\DataSources\RegistrationWeb.Logic.RegistrationServiceReference.StudentUserDAO1.datasource" />
+    <Content Include="Properties\DataSources\RegistrationWeb.Logic.RegistrationServiceReference.CourseDAO2.datasource" />
+    <Content Include="Properties\DataSources\RegistrationWeb.Logic.RegistrationServiceReference.CourseSessionDAO1.datasource" />
+    <Content Include="Properties\DataSources\RegistrationWeb.Logic.RegistrationServiceReference.RegistrarUserDAO2.datasource" />
+    <Content Include="Properties\DataSources\RegistrationWeb.Logic.RegistrationServiceReference.StudentDAO5.datasource" />
+    <Content Include="Properties\DataSources\RegistrationWeb.Logic.RegistrationServiceReference.StudentUserDAO2.datasource" />
+    <Content Include="Properties\DataSources\RegistrationWeb.Logic.RegistrationServiceReference.BookmarkedSessionDAO.datasource" />
+    <Content Include="Properties\DataSources\RegistrationWeb.Logic.RegistrationServiceReference.CourseDAO3.datasource" />
+    <Content Include="Properties\DataSources\RegistrationWeb.Logic.RegistrationServiceReference.CourseSessionDAO2.datasource" />
+    <Content Include="Properties\DataSources\RegistrationWeb.Logic.RegistrationServiceReference.RegistrarUserDAO3.datasource" />
+    <Content Include="Properties\DataSources\RegistrationWeb.Logic.RegistrationServiceReference.StudentDAO6.datasource" />
+    <Content Include="Properties\DataSources\RegistrationWeb.Logic.RegistrationServiceReference.StudentUserDAO3.datasource" />
+    <Content Include="Properties\DataSources\RegistrationWeb.Logic.RegistrationServiceReference.CourseDAO4.datasource" />
+    <Content Include="Properties\DataSources\RegistrationWeb.Logic.RegistrationServiceReference.CourseSessionDAO3.datasource" />
+    <Content Include="Properties\DataSources\RegistrationWeb.Logic.RegistrationServiceReference.RegistrarUserDAO4.datasource" />
+    <Content Include="Properties\DataSources\RegistrationWeb.Logic.RegistrationServiceReference.StudentDAO7.datasource" />
+    <Content Include="Properties\DataSources\RegistrationWeb.Logic.RegistrationServiceReference.StudentUserDAO4.datasource" />
+    <Content Include="Properties\DataSources\RegistrationWeb.Logic.RegistrationServiceReference.CourseDAO5.datasource" />
+    <Content Include="Properties\DataSources\RegistrationWeb.Logic.RegistrationServiceReference.CourseSessionDAO4.datasource" />
+    <Content Include="Properties\DataSources\RegistrationWeb.Logic.RegistrationServiceReference.RegistrarUserDAO5.datasource" />
+    <Content Include="Properties\DataSources\RegistrationWeb.Logic.RegistrationServiceReference.ScheduleDAO.datasource" />
+    <Content Include="Properties\DataSources\RegistrationWeb.Logic.RegistrationServiceReference.StudentDAO8.datasource" />
+    <Content Include="Properties\DataSources\RegistrationWeb.Logic.RegistrationServiceReference.StudentUserDAO5.datasource" />
+    <Content Include="Properties\DataSources\RegistrationWeb.Logic.RegistrationServiceReference.CourseDAO6.datasource" />
+    <Content Include="Properties\DataSources\RegistrationWeb.Logic.RegistrationServiceReference.CourseSessionDAO5.datasource" />
+    <Content Include="Properties\DataSources\RegistrationWeb.Logic.RegistrationServiceReference.RegistrarUserDAO6.datasource" />
+    <Content Include="Properties\DataSources\RegistrationWeb.Logic.RegistrationServiceReference.StudentDAO9.datasource" />
+    <Content Include="Properties\DataSources\RegistrationWeb.Logic.RegistrationServiceReference.StudentUserDAO6.datasource" />
+    <Content Include="Properties\DataSources\RegistrationWeb.Logic.RegistrationServiceReference.CourseDAO7.datasource" />
+    <Content Include="Properties\DataSources\RegistrationWeb.Logic.RegistrationServiceReference.CourseSessionDAO6.datasource" />
+    <Content Include="Properties\DataSources\RegistrationWeb.Logic.RegistrationServiceReference.RegistrarUserDAO7.datasource" />
+    <Content Include="Properties\DataSources\RegistrationWeb.Logic.RegistrationServiceReference.StudentDAO10.datasource" />
+    <Content Include="Properties\DataSources\RegistrationWeb.Logic.RegistrationServiceReference.StudentUserDAO7.datasource" />
     <None Include="Service References\RegistrationServiceReference\RegistrationDataService.wsdl" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -112,15 +155,16 @@
     <Content Include="default.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Properties\DataSources\RegistrationWeb.Logic.RegistrationServiceReference.StudentDAO.datasource" />
+    <Content Include="registrar-login.aspx" />
+    <Content Include="registrar-panel.aspx" />
     <None Include="Service References\RegistrationServiceReference\configuration91.svcinfo" />
     <None Include="Service References\RegistrationServiceReference\configuration.svcinfo" />
     <None Include="Service References\RegistrationServiceReference\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <Content Include="registrar-login.aspx" />
-    <Content Include="registrar-panel.aspx" />
     <Content Include="student-login.aspx" />
+    <Content Include="student-registration-status.aspx" />
     <Content Include="student-registration.aspx" />
     <Content Include="Web.config" />
     <Content Include="Site.Master" />
@@ -169,6 +213,13 @@
     </Compile>
     <Compile Include="student-login.aspx.designer.cs">
       <DependentUpon>student-login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="student-registration-status.aspx.cs">
+      <DependentUpon>student-registration-status.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="student-registration-status.aspx.designer.cs">
+      <DependentUpon>student-registration-status.aspx</DependentUpon>
     </Compile>
     <Compile Include="student-registration.aspx.cs">
       <DependentUpon>student-registration.aspx</DependentUpon>

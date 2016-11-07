@@ -1,5 +1,4 @@
 ﻿using RegistrationApp.DataAccess;
-using RegistrationApp.Models;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -52,15 +51,16 @@ namespace RegistrationApp.Tests
         public void Test_AddCourseBookmark()
         {
             var data = new EfData();
-            int bookmarkStudentId = 1;
+            int bookmarkStudentUserId = 1;
             int bookmarkSessionId = 1;
 
-            var actual = data.AddCourseBookmark(bookmarkStudentId, bookmarkSessionId);
+            BookmarkedSession bookmarkToAdd = new BookmarkedSession { StudentUserId = bookmarkStudentUserId, SessionId = bookmarkSessionId };
+
+            var actual = data.AddCourseBookmark(bookmarkToAdd);
             Assert.True(actual);
 
             //Remove test data
-            CourseBookmark bookmarkToRemove = new CourseBookmark { studentId = bookmarkStudentId, courseSessionId = bookmarkSessionId };
-            data.RemoveCourseBookmark(bookmarkToRemove);
+            data.RemoveCourseBookmark(bookmarkToAdd);
         }
 
 
@@ -68,15 +68,14 @@ namespace RegistrationApp.Tests
         public void Test_RemoveCourseBookmark()
         {
             var data = new EfData();
-            int bookmarkStudentId = 1;
+            int bookmarkStudentUserId = 1;
             int bookmarkSessionId = 1;
 
             //Add test bookmark
-            data.AddCourseBookmark(bookmarkStudentId, bookmarkSessionId);
+            BookmarkedSession bookmarkToAdd = new BookmarkedSession { StudentUserId = bookmarkStudentUserId, SessionId = bookmarkSessionId };
+            data.AddCourseBookmark(bookmarkToAdd);
 
-            CourseBookmark bookmarkToRemove = new CourseBookmark { studentId = bookmarkStudentId, courseSessionId = bookmarkSessionId };
-            var actual = data.RemoveCourseBookmark(bookmarkToRemove);
-
+            var actual = data.RemoveCourseBookmark(bookmarkToAdd);
             Assert.True(actual);
         }
         #endregion

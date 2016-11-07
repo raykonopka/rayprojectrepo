@@ -17,6 +17,7 @@ namespace RegistrationApp
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public CourseSession()
         {
+            this.BookmarkedSessions = new HashSet<BookmarkedSession>();
             this.Schedules = new HashSet<Schedule>();
         }
     
@@ -28,7 +29,9 @@ namespace RegistrationApp
         public string DaysInSession { get; set; }
         public int Capacity { get; set; }
     
-        public virtual Course Cours { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<BookmarkedSession> BookmarkedSessions { get; set; }
+        public virtual Course Course { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Schedule> Schedules { get; set; }
     }

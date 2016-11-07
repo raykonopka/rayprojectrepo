@@ -90,6 +90,564 @@ namespace RegistrationWeb.Logic.RegistrationServiceReference {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="StudentUserDAO", Namespace="http://schemas.datacontract.org/2004/07/RegistrationApp.DataClient.Models")]
+    [System.SerializableAttribute()]
+    public partial class StudentUserDAO : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int StudentIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string UserPasswordField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string UsernameField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int StudentId {
+            get {
+                return this.StudentIdField;
+            }
+            set {
+                if ((this.StudentIdField.Equals(value) != true)) {
+                    this.StudentIdField = value;
+                    this.RaisePropertyChanged("StudentId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string UserPassword {
+            get {
+                return this.UserPasswordField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UserPasswordField, value) != true)) {
+                    this.UserPasswordField = value;
+                    this.RaisePropertyChanged("UserPassword");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Username {
+            get {
+                return this.UsernameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UsernameField, value) != true)) {
+                    this.UsernameField = value;
+                    this.RaisePropertyChanged("Username");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="RegistrarUserDAO", Namespace="http://schemas.datacontract.org/2004/07/RegistrationApp.DataClient.Models")]
+    [System.SerializableAttribute()]
+    public partial class RegistrarUserDAO : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string UserPasswordField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string UsernameField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string UserPassword {
+            get {
+                return this.UserPasswordField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UserPasswordField, value) != true)) {
+                    this.UserPasswordField = value;
+                    this.RaisePropertyChanged("UserPassword");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Username {
+            get {
+                return this.UsernameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UsernameField, value) != true)) {
+                    this.UsernameField = value;
+                    this.RaisePropertyChanged("Username");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CourseDAO", Namespace="http://schemas.datacontract.org/2004/07/RegistrationApp.DataClient.Models")]
+    [System.SerializableAttribute()]
+    public partial class CourseDAO : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int CreditsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int DepartmentIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TitleField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Credits {
+            get {
+                return this.CreditsField;
+            }
+            set {
+                if ((this.CreditsField.Equals(value) != true)) {
+                    this.CreditsField = value;
+                    this.RaisePropertyChanged("Credits");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int DepartmentId {
+            get {
+                return this.DepartmentIdField;
+            }
+            set {
+                if ((this.DepartmentIdField.Equals(value) != true)) {
+                    this.DepartmentIdField = value;
+                    this.RaisePropertyChanged("DepartmentId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Title {
+            get {
+                return this.TitleField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TitleField, value) != true)) {
+                    this.TitleField = value;
+                    this.RaisePropertyChanged("Title");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CourseSessionDAO", Namespace="http://schemas.datacontract.org/2004/07/RegistrationApp.DataClient.Models")]
+    [System.SerializableAttribute()]
+    public partial class CourseSessionDAO : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int CapacityField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int CourseIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DaysInSessionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.TimeSpan EndTimeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ProfessorField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.TimeSpan StartTimeField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Capacity {
+            get {
+                return this.CapacityField;
+            }
+            set {
+                if ((this.CapacityField.Equals(value) != true)) {
+                    this.CapacityField = value;
+                    this.RaisePropertyChanged("Capacity");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int CourseId {
+            get {
+                return this.CourseIdField;
+            }
+            set {
+                if ((this.CourseIdField.Equals(value) != true)) {
+                    this.CourseIdField = value;
+                    this.RaisePropertyChanged("CourseId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string DaysInSession {
+            get {
+                return this.DaysInSessionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DaysInSessionField, value) != true)) {
+                    this.DaysInSessionField = value;
+                    this.RaisePropertyChanged("DaysInSession");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.TimeSpan EndTime {
+            get {
+                return this.EndTimeField;
+            }
+            set {
+                if ((this.EndTimeField.Equals(value) != true)) {
+                    this.EndTimeField = value;
+                    this.RaisePropertyChanged("EndTime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Professor {
+            get {
+                return this.ProfessorField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProfessorField, value) != true)) {
+                    this.ProfessorField = value;
+                    this.RaisePropertyChanged("Professor");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.TimeSpan StartTime {
+            get {
+                return this.StartTimeField;
+            }
+            set {
+                if ((this.StartTimeField.Equals(value) != true)) {
+                    this.StartTimeField = value;
+                    this.RaisePropertyChanged("StartTime");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="BookmarkedSessionDAO", Namespace="http://schemas.datacontract.org/2004/07/RegistrationApp.DataClient.Models")]
+    [System.SerializableAttribute()]
+    public partial class BookmarkedSessionDAO : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int SessionIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int StudentUserIdField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int SessionId {
+            get {
+                return this.SessionIdField;
+            }
+            set {
+                if ((this.SessionIdField.Equals(value) != true)) {
+                    this.SessionIdField = value;
+                    this.RaisePropertyChanged("SessionId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int StudentUserId {
+            get {
+                return this.StudentUserIdField;
+            }
+            set {
+                if ((this.StudentUserIdField.Equals(value) != true)) {
+                    this.StudentUserIdField = value;
+                    this.RaisePropertyChanged("StudentUserId");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ScheduleDAO", Namespace="http://schemas.datacontract.org/2004/07/RegistrationApp.DataClient.Models")]
+    [System.SerializableAttribute()]
+    public partial class ScheduleDAO : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int CourseSessionIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int StudentIdField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int CourseSessionId {
+            get {
+                return this.CourseSessionIdField;
+            }
+            set {
+                if ((this.CourseSessionIdField.Equals(value) != true)) {
+                    this.CourseSessionIdField = value;
+                    this.RaisePropertyChanged("CourseSessionId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int StudentId {
+            get {
+                return this.StudentIdField;
+            }
+            set {
+                if ((this.StudentIdField.Equals(value) != true)) {
+                    this.StudentIdField = value;
+                    this.RaisePropertyChanged("StudentId");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="RegistrationServiceReference.IRegistrationDataService")]
     public interface IRegistrationDataService {
@@ -99,6 +657,102 @@ namespace RegistrationWeb.Logic.RegistrationServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRegistrationDataService/GetStudents", ReplyAction="http://tempuri.org/IRegistrationDataService/GetStudentsResponse")]
         System.Threading.Tasks.Task<RegistrationWeb.Logic.RegistrationServiceReference.StudentDAO[]> GetStudentsAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRegistrationDataService/GetStudentsUsers", ReplyAction="http://tempuri.org/IRegistrationDataService/GetStudentsUsersResponse")]
+        RegistrationWeb.Logic.RegistrationServiceReference.StudentUserDAO[] GetStudentsUsers();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRegistrationDataService/GetStudentsUsers", ReplyAction="http://tempuri.org/IRegistrationDataService/GetStudentsUsersResponse")]
+        System.Threading.Tasks.Task<RegistrationWeb.Logic.RegistrationServiceReference.StudentUserDAO[]> GetStudentsUsersAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRegistrationDataService/GetRegistrarUsers", ReplyAction="http://tempuri.org/IRegistrationDataService/GetRegistrarUsersResponse")]
+        RegistrationWeb.Logic.RegistrationServiceReference.RegistrarUserDAO[] GetRegistrarUsers();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRegistrationDataService/GetRegistrarUsers", ReplyAction="http://tempuri.org/IRegistrationDataService/GetRegistrarUsersResponse")]
+        System.Threading.Tasks.Task<RegistrationWeb.Logic.RegistrationServiceReference.RegistrarUserDAO[]> GetRegistrarUsersAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRegistrationDataService/GetCourses", ReplyAction="http://tempuri.org/IRegistrationDataService/GetCoursesResponse")]
+        RegistrationWeb.Logic.RegistrationServiceReference.CourseDAO[] GetCourses();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRegistrationDataService/GetCourses", ReplyAction="http://tempuri.org/IRegistrationDataService/GetCoursesResponse")]
+        System.Threading.Tasks.Task<RegistrationWeb.Logic.RegistrationServiceReference.CourseDAO[]> GetCoursesAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRegistrationDataService/GetSessions", ReplyAction="http://tempuri.org/IRegistrationDataService/GetSessionsResponse")]
+        RegistrationWeb.Logic.RegistrationServiceReference.CourseSessionDAO[] GetSessions();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRegistrationDataService/GetSessions", ReplyAction="http://tempuri.org/IRegistrationDataService/GetSessionsResponse")]
+        System.Threading.Tasks.Task<RegistrationWeb.Logic.RegistrationServiceReference.CourseSessionDAO[]> GetSessionsAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRegistrationDataService/RegisterStudent", ReplyAction="http://tempuri.org/IRegistrationDataService/RegisterStudentResponse")]
+        bool RegisterStudent(int studentId, int sessionId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRegistrationDataService/RegisterStudent", ReplyAction="http://tempuri.org/IRegistrationDataService/RegisterStudentResponse")]
+        System.Threading.Tasks.Task<bool> RegisterStudentAsync(int studentId, int sessionId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRegistrationDataService/DropFromSession", ReplyAction="http://tempuri.org/IRegistrationDataService/DropFromSessionResponse")]
+        bool DropFromSession(int studentId, int sessionId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRegistrationDataService/DropFromSession", ReplyAction="http://tempuri.org/IRegistrationDataService/DropFromSessionResponse")]
+        System.Threading.Tasks.Task<bool> DropFromSessionAsync(int studentId, int sessionId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRegistrationDataService/AddCourseBookmark", ReplyAction="http://tempuri.org/IRegistrationDataService/AddCourseBookmarkResponse")]
+        bool AddCourseBookmark(RegistrationWeb.Logic.RegistrationServiceReference.BookmarkedSessionDAO bookmarkToAdd);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRegistrationDataService/AddCourseBookmark", ReplyAction="http://tempuri.org/IRegistrationDataService/AddCourseBookmarkResponse")]
+        System.Threading.Tasks.Task<bool> AddCourseBookmarkAsync(RegistrationWeb.Logic.RegistrationServiceReference.BookmarkedSessionDAO bookmarkToAdd);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRegistrationDataService/RemoveCourseBookmark", ReplyAction="http://tempuri.org/IRegistrationDataService/RemoveCourseBookmarkResponse")]
+        bool RemoveCourseBookmark(RegistrationWeb.Logic.RegistrationServiceReference.BookmarkedSessionDAO bookmarkToRemove);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRegistrationDataService/RemoveCourseBookmark", ReplyAction="http://tempuri.org/IRegistrationDataService/RemoveCourseBookmarkResponse")]
+        System.Threading.Tasks.Task<bool> RemoveCourseBookmarkAsync(RegistrationWeb.Logic.RegistrationServiceReference.BookmarkedSessionDAO bookmarkToRemove);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRegistrationDataService/GetBookmarks", ReplyAction="http://tempuri.org/IRegistrationDataService/GetBookmarksResponse")]
+        RegistrationWeb.Logic.RegistrationServiceReference.BookmarkedSessionDAO[] GetBookmarks();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRegistrationDataService/GetBookmarks", ReplyAction="http://tempuri.org/IRegistrationDataService/GetBookmarksResponse")]
+        System.Threading.Tasks.Task<RegistrationWeb.Logic.RegistrationServiceReference.BookmarkedSessionDAO[]> GetBookmarksAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRegistrationDataService/GetSchedules", ReplyAction="http://tempuri.org/IRegistrationDataService/GetSchedulesResponse")]
+        RegistrationWeb.Logic.RegistrationServiceReference.ScheduleDAO[] GetSchedules();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRegistrationDataService/GetSchedules", ReplyAction="http://tempuri.org/IRegistrationDataService/GetSchedulesResponse")]
+        System.Threading.Tasks.Task<RegistrationWeb.Logic.RegistrationServiceReference.ScheduleDAO[]> GetSchedulesAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRegistrationDataService/InsertCourse", ReplyAction="http://tempuri.org/IRegistrationDataService/InsertCourseResponse")]
+        bool InsertCourse(RegistrationWeb.Logic.RegistrationServiceReference.CourseDAO course);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRegistrationDataService/InsertCourse", ReplyAction="http://tempuri.org/IRegistrationDataService/InsertCourseResponse")]
+        System.Threading.Tasks.Task<bool> InsertCourseAsync(RegistrationWeb.Logic.RegistrationServiceReference.CourseDAO course);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRegistrationDataService/CancelCourse", ReplyAction="http://tempuri.org/IRegistrationDataService/CancelCourseResponse")]
+        bool CancelCourse(RegistrationWeb.Logic.RegistrationServiceReference.CourseDAO course);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRegistrationDataService/CancelCourse", ReplyAction="http://tempuri.org/IRegistrationDataService/CancelCourseResponse")]
+        System.Threading.Tasks.Task<bool> CancelCourseAsync(RegistrationWeb.Logic.RegistrationServiceReference.CourseDAO course);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRegistrationDataService/InsertStudent", ReplyAction="http://tempuri.org/IRegistrationDataService/InsertStudentResponse")]
+        bool InsertStudent(RegistrationWeb.Logic.RegistrationServiceReference.StudentDAO student);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRegistrationDataService/InsertStudent", ReplyAction="http://tempuri.org/IRegistrationDataService/InsertStudentResponse")]
+        System.Threading.Tasks.Task<bool> InsertStudentAsync(RegistrationWeb.Logic.RegistrationServiceReference.StudentDAO student);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRegistrationDataService/RemoveStudent", ReplyAction="http://tempuri.org/IRegistrationDataService/RemoveStudentResponse")]
+        bool RemoveStudent(RegistrationWeb.Logic.RegistrationServiceReference.StudentDAO student);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRegistrationDataService/RemoveStudent", ReplyAction="http://tempuri.org/IRegistrationDataService/RemoveStudentResponse")]
+        System.Threading.Tasks.Task<bool> RemoveStudentAsync(RegistrationWeb.Logic.RegistrationServiceReference.StudentDAO student);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRegistrationDataService/GetStudentSchedule", ReplyAction="http://tempuri.org/IRegistrationDataService/GetStudentScheduleResponse")]
+        RegistrationWeb.Logic.RegistrationServiceReference.CourseSessionDAO[] GetStudentSchedule(int studentId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRegistrationDataService/GetStudentSchedule", ReplyAction="http://tempuri.org/IRegistrationDataService/GetStudentScheduleResponse")]
+        System.Threading.Tasks.Task<RegistrationWeb.Logic.RegistrationServiceReference.CourseSessionDAO[]> GetStudentScheduleAsync(int studentId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRegistrationDataService/ListEnrolledStudents", ReplyAction="http://tempuri.org/IRegistrationDataService/ListEnrolledStudentsResponse")]
+        RegistrationWeb.Logic.RegistrationServiceReference.StudentDAO[] ListEnrolledStudents(int sessionId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRegistrationDataService/ListEnrolledStudents", ReplyAction="http://tempuri.org/IRegistrationDataService/ListEnrolledStudentsResponse")]
+        System.Threading.Tasks.Task<RegistrationWeb.Logic.RegistrationServiceReference.StudentDAO[]> ListEnrolledStudentsAsync(int sessionId);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -134,6 +788,134 @@ namespace RegistrationWeb.Logic.RegistrationServiceReference {
         
         public System.Threading.Tasks.Task<RegistrationWeb.Logic.RegistrationServiceReference.StudentDAO[]> GetStudentsAsync() {
             return base.Channel.GetStudentsAsync();
+        }
+        
+        public RegistrationWeb.Logic.RegistrationServiceReference.StudentUserDAO[] GetStudentsUsers() {
+            return base.Channel.GetStudentsUsers();
+        }
+        
+        public System.Threading.Tasks.Task<RegistrationWeb.Logic.RegistrationServiceReference.StudentUserDAO[]> GetStudentsUsersAsync() {
+            return base.Channel.GetStudentsUsersAsync();
+        }
+        
+        public RegistrationWeb.Logic.RegistrationServiceReference.RegistrarUserDAO[] GetRegistrarUsers() {
+            return base.Channel.GetRegistrarUsers();
+        }
+        
+        public System.Threading.Tasks.Task<RegistrationWeb.Logic.RegistrationServiceReference.RegistrarUserDAO[]> GetRegistrarUsersAsync() {
+            return base.Channel.GetRegistrarUsersAsync();
+        }
+        
+        public RegistrationWeb.Logic.RegistrationServiceReference.CourseDAO[] GetCourses() {
+            return base.Channel.GetCourses();
+        }
+        
+        public System.Threading.Tasks.Task<RegistrationWeb.Logic.RegistrationServiceReference.CourseDAO[]> GetCoursesAsync() {
+            return base.Channel.GetCoursesAsync();
+        }
+        
+        public RegistrationWeb.Logic.RegistrationServiceReference.CourseSessionDAO[] GetSessions() {
+            return base.Channel.GetSessions();
+        }
+        
+        public System.Threading.Tasks.Task<RegistrationWeb.Logic.RegistrationServiceReference.CourseSessionDAO[]> GetSessionsAsync() {
+            return base.Channel.GetSessionsAsync();
+        }
+        
+        public bool RegisterStudent(int studentId, int sessionId) {
+            return base.Channel.RegisterStudent(studentId, sessionId);
+        }
+        
+        public System.Threading.Tasks.Task<bool> RegisterStudentAsync(int studentId, int sessionId) {
+            return base.Channel.RegisterStudentAsync(studentId, sessionId);
+        }
+        
+        public bool DropFromSession(int studentId, int sessionId) {
+            return base.Channel.DropFromSession(studentId, sessionId);
+        }
+        
+        public System.Threading.Tasks.Task<bool> DropFromSessionAsync(int studentId, int sessionId) {
+            return base.Channel.DropFromSessionAsync(studentId, sessionId);
+        }
+        
+        public bool AddCourseBookmark(RegistrationWeb.Logic.RegistrationServiceReference.BookmarkedSessionDAO bookmarkToAdd) {
+            return base.Channel.AddCourseBookmark(bookmarkToAdd);
+        }
+        
+        public System.Threading.Tasks.Task<bool> AddCourseBookmarkAsync(RegistrationWeb.Logic.RegistrationServiceReference.BookmarkedSessionDAO bookmarkToAdd) {
+            return base.Channel.AddCourseBookmarkAsync(bookmarkToAdd);
+        }
+        
+        public bool RemoveCourseBookmark(RegistrationWeb.Logic.RegistrationServiceReference.BookmarkedSessionDAO bookmarkToRemove) {
+            return base.Channel.RemoveCourseBookmark(bookmarkToRemove);
+        }
+        
+        public System.Threading.Tasks.Task<bool> RemoveCourseBookmarkAsync(RegistrationWeb.Logic.RegistrationServiceReference.BookmarkedSessionDAO bookmarkToRemove) {
+            return base.Channel.RemoveCourseBookmarkAsync(bookmarkToRemove);
+        }
+        
+        public RegistrationWeb.Logic.RegistrationServiceReference.BookmarkedSessionDAO[] GetBookmarks() {
+            return base.Channel.GetBookmarks();
+        }
+        
+        public System.Threading.Tasks.Task<RegistrationWeb.Logic.RegistrationServiceReference.BookmarkedSessionDAO[]> GetBookmarksAsync() {
+            return base.Channel.GetBookmarksAsync();
+        }
+        
+        public RegistrationWeb.Logic.RegistrationServiceReference.ScheduleDAO[] GetSchedules() {
+            return base.Channel.GetSchedules();
+        }
+        
+        public System.Threading.Tasks.Task<RegistrationWeb.Logic.RegistrationServiceReference.ScheduleDAO[]> GetSchedulesAsync() {
+            return base.Channel.GetSchedulesAsync();
+        }
+        
+        public bool InsertCourse(RegistrationWeb.Logic.RegistrationServiceReference.CourseDAO course) {
+            return base.Channel.InsertCourse(course);
+        }
+        
+        public System.Threading.Tasks.Task<bool> InsertCourseAsync(RegistrationWeb.Logic.RegistrationServiceReference.CourseDAO course) {
+            return base.Channel.InsertCourseAsync(course);
+        }
+        
+        public bool CancelCourse(RegistrationWeb.Logic.RegistrationServiceReference.CourseDAO course) {
+            return base.Channel.CancelCourse(course);
+        }
+        
+        public System.Threading.Tasks.Task<bool> CancelCourseAsync(RegistrationWeb.Logic.RegistrationServiceReference.CourseDAO course) {
+            return base.Channel.CancelCourseAsync(course);
+        }
+        
+        public bool InsertStudent(RegistrationWeb.Logic.RegistrationServiceReference.StudentDAO student) {
+            return base.Channel.InsertStudent(student);
+        }
+        
+        public System.Threading.Tasks.Task<bool> InsertStudentAsync(RegistrationWeb.Logic.RegistrationServiceReference.StudentDAO student) {
+            return base.Channel.InsertStudentAsync(student);
+        }
+        
+        public bool RemoveStudent(RegistrationWeb.Logic.RegistrationServiceReference.StudentDAO student) {
+            return base.Channel.RemoveStudent(student);
+        }
+        
+        public System.Threading.Tasks.Task<bool> RemoveStudentAsync(RegistrationWeb.Logic.RegistrationServiceReference.StudentDAO student) {
+            return base.Channel.RemoveStudentAsync(student);
+        }
+        
+        public RegistrationWeb.Logic.RegistrationServiceReference.CourseSessionDAO[] GetStudentSchedule(int studentId) {
+            return base.Channel.GetStudentSchedule(studentId);
+        }
+        
+        public System.Threading.Tasks.Task<RegistrationWeb.Logic.RegistrationServiceReference.CourseSessionDAO[]> GetStudentScheduleAsync(int studentId) {
+            return base.Channel.GetStudentScheduleAsync(studentId);
+        }
+        
+        public RegistrationWeb.Logic.RegistrationServiceReference.StudentDAO[] ListEnrolledStudents(int sessionId) {
+            return base.Channel.ListEnrolledStudents(sessionId);
+        }
+        
+        public System.Threading.Tasks.Task<RegistrationWeb.Logic.RegistrationServiceReference.StudentDAO[]> ListEnrolledStudentsAsync(int sessionId) {
+            return base.Channel.ListEnrolledStudentsAsync(sessionId);
         }
     }
 }

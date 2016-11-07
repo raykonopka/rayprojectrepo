@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RegistrationWeb.Logic;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,6 +10,7 @@ namespace RegistrationWeb.Client
 {
     public partial class registrar_login : System.Web.UI.Page
     {
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -19,13 +21,43 @@ namespace RegistrationWeb.Client
             if (string.IsNullOrWhiteSpace(Username.Text) ||
                 string.IsNullOrWhiteSpace(Password.Text))
             {
-                Message.Text = "Invalid Username Or Password";
+                Message.Text = "No entry for either username or password.";
             }
 
             else
             {
-                Response.Redirect("~/registrar-panel.aspx");
+                var data = new DataService();
+
+                var registrarUsers = data.GetRegistrarUsers();
+                var matchingUsername = registrarUsers.Where(ru => ru.Username.Equals(Username.Text));
+                var matchingPassword = matchingUsername.Where(mu => mu.UserPassword.Equals(Password.Text));
+
+                if (matchingPassword.Count() == 1)
+                {
+                    //Remove any existing cookies
+                    if (Request.Cookies["RegistrarUserInfo"] != null)
+                    {
+                        HttpCookie myCookie = new HttpCookie("RegistrarUserInfo");
+                        myCookie.Expires = DateTime.Now.AddDays(-1d);
+                        Response.Cookies.Add(myCookie);
+                    }
+
+                    //Add cookie with registrar user id
+                    HttpCookie registrarCookie = new HttpCookie("RegistrarUserInfo");
+                    registrarCookie["RegistrarUserId"] = matchingPassword.First().Id.ToString();
+                    registrarCookie.Expires = DateTime.Now.AddDays(1d);
+                    Response.Cookies.Add(registrarCookie);
+                
+                    Response.Redirect("~/registrar-panel.aspx");
+                }
+
+                else
+                {
+                    Message.Text = "Invalid username or password.";
+                }
             }
+
         }
+
     }
 }

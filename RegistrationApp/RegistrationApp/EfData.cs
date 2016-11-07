@@ -1,5 +1,4 @@
-﻿using RegistrationApp.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Diagnostics;
@@ -11,10 +10,25 @@ namespace RegistrationApp.DataAccess
 {
     public partial class EfData
     {
-        private RegistrationDBEntities1 db = new RegistrationDBEntities1();
-        private List<CourseBookmark> courseBookmarks = new List<CourseBookmark>();
+        private RegistrationDBEntities db = new RegistrationDBEntities();
 
         //General Data Access
+
+        #region Student User Data Access
+        public List<StudentUser> GetStudentsUsers()
+        {
+            return db.StudentUsers.ToList();
+        }
+        #endregion
+
+
+        #region Registrar User Data Access
+        public List<RegistrarUser> GetRegistrarUsers()
+        {
+            return db.RegistrarUsers.ToList();
+        }
+        #endregion
+
 
         #region Students Data Access
         public List<Student> GetStudents()
@@ -380,7 +394,7 @@ namespace RegistrationApp.DataAccess
         #endregion
 
 
-        #region List Course Details
+        #region List Student Schedule
         public List<CourseSession> ListStudentSchedule(int studentId)
         {
             List<CourseSession> studentSchedule = new List<CourseSession>();
@@ -408,22 +422,31 @@ namespace RegistrationApp.DataAccess
         #endregion
 
 
-        #region Add A Course Bookmark
-        public bool AddCourseBookmark(int studentId, int sessionId)
+        #region Get Bookmarked Sessions
+        public List<BookmarkedSession> GetBookmarkedSessions()
         {
-            var matchingStudents = db.Students.Where(s => s.Id.Equals(studentId));
-            var matchingSessions = db.CourseSessions.Where(s => s.Id.Equals(sessionId));
+            return db.BookmarkedSessions.ToList();
+        }
+        #endregion
 
-            if ((matchingStudents.Count() == 1) && (matchingSessions.Count() == 1))
+
+        #region Add A Course Bookmark
+        public bool AddCourseBookmark(BookmarkedSession bookmarkToAdd)
+        {
+            List<BookmarkedSession> allBookmarks = db.BookmarkedSessions.ToList();
+
+            var matchingBookmarks1 = allBookmarks.Where(bm => bm.StudentUserId.Equals(bookmarkToAdd.StudentUserId));
+            var matchingBookmarks2 = matchingBookmarks1.Where(bm => bm.SessionId.Equals(bookmarkToAdd.SessionId));
+
+            if (matchingBookmarks2.Count() == 0)
             {
-                CourseBookmark newCourseBookmark = new CourseBookmark { studentId = studentId, courseSessionId = sessionId };
-                courseBookmarks.Add(newCourseBookmark);
-                return true;
+                db.BookmarkedSessions.Add(bookmarkToAdd);
+                return db.SaveChanges() > 0;
             }
 
             else
             {
-                Debug.WriteLine("Invalid student id or invalid session id.");
+                Debug.WriteLine("Bookmark already exists.");
                 return false;
             }
         }
@@ -431,20 +454,19 @@ namespace RegistrationApp.DataAccess
 
 
         #region Remove A Course Bookmark
-        public bool RemoveCourseBookmark(CourseBookmark bookmarkToRemove)
+        public bool RemoveCourseBookmark(BookmarkedSession bookmarkToRemove)
         {
-            var matchingStudents = db.Students.Where(s => s.Id.Equals(bookmarkToRemove.studentId));
-            var matchingSessions = db.CourseSessions.Where(s => s.Id.Equals(bookmarkToRemove.courseSessionId));
+            var matchingBookmarks = db.BookmarkedSessions.Where(bm => bm.Id.Equals(bookmarkToRemove.Id));
 
-            if ((matchingStudents.Count() == 1) && (matchingSessions.Count() == 1))
+            if (matchingBookmarks.Count() > 0)
             {
-                courseBookmarks.Remove(bookmarkToRemove);
-                return true;
+                db.BookmarkedSessions.Remove(matchingBookmarks.First());
+                return db.SaveChanges() > 0;
             }
 
             else
             {
-                Debug.WriteLine("Invalid student id or invalid session id.");
+                Debug.WriteLine("Bookmark does not contain valid information.");
                 return false;
             } 
         }

@@ -94,12 +94,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataMapper.cs" />
+    <Compile Include="Models\BookmarkedSessionDAO.cs" />
     <Compile Include="Models\CourseDAO.cs" />
     <Compile Include="Models\CourseSessionDAO.cs" />
     <Compile Include="Models\DepartmentDAO.cs" />
     <Compile Include="Models\MajorDAO.cs" />
+    <Compile Include="Models\RegistrarUserDAO.cs" />
     <Compile Include="Models\ScheduleDAO.cs" />
     <Compile Include="Models\StudentDAO.cs" />
+    <Compile Include="Models\StudentUserDAO.cs" />
     <Compile Include="RegistrationDataService.svc.cs">
       <DependentUpon>RegistrationDataService.svc</DependentUpon>
     </Compile>

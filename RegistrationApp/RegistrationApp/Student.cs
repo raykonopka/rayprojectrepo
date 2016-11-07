@@ -18,6 +18,7 @@ namespace RegistrationApp
         public Student()
         {
             this.Schedules = new HashSet<Schedule>();
+            this.StudentUsers = new HashSet<StudentUser>();
         }
     
         public int Id { get; set; }
@@ -27,5 +28,7 @@ namespace RegistrationApp
         public virtual Major Major { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Schedule> Schedules { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<StudentUser> StudentUsers { get; set; }
     }
 }
