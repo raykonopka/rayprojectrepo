@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace RegistrationApp.Tests
 {
@@ -136,6 +137,75 @@ namespace RegistrationApp.Tests
 
             //Remove any test data
             data.RemoveSession(sessionToUpdate);
+        }
+
+
+        [Fact]
+        public void Test_ListEnrolledStudents()
+        {
+            var data = new EfData();
+
+            List<CourseSession> sessions = data.GetSessions();
+            int sessionId = sessions.First().Id;
+
+            var actual = data.ListEnrolledStudents(sessionId);
+
+            Assert.NotNull(actual);
+
+            //Print list of students to debug
+            foreach (Student st in actual)
+            {
+                Debug.WriteLine(st.StudentName);
+            }
+        }
+        #endregion
+
+
+        #region Master Scheduler
+        [Fact]
+        public void Test_ListStudentSchedule()
+        {
+            var data = new EfData();
+
+            List<Student> students = data.GetStudents();
+            int studentId = students.First().Id;
+
+            var actual = data.ListStudentSchedule(studentId);
+
+            Assert.NotNull(actual);
+
+            //Print list of course IDs to debug
+            foreach (CourseSession st in actual)
+            {
+                Debug.WriteLine(st.CourseId);
+            }
+        }
+
+
+        [Fact]
+        public void Test_InsertStudent()
+        {
+            var data = new EfData();
+
+            Student studentToAdd = new Student { MajorId = 1, StudentName = "Test Student" };
+            var actual = data.InsertStudent(studentToAdd);
+            Assert.True(actual);
+
+            //Remove test data
+            data.RemoveStudent(studentToAdd);
+        }
+
+
+        [Fact]
+        public void Test_RemoveStudent()
+        {
+            var data = new EfData();
+
+            Student studentToAdd = new Student { MajorId = 1, StudentName = "Test Student" };
+            data.InsertStudent(studentToAdd);
+
+            var actual = data.RemoveStudent(studentToAdd);
+            Assert.True(actual);
         }
         #endregion
 

@@ -26,7 +26,7 @@ namespace RegistrationApp
         public System.TimeSpan StartTime { get; set; }
         public System.TimeSpan EndTime { get; set; }
         public string DaysInSession { get; set; }
-        public Nullable<int> Capacity { get; set; }
+        public int Capacity { get; set; }
     
         public virtual Course Cours { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

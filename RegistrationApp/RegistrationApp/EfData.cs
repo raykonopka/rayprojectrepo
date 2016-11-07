@@ -39,6 +39,25 @@ namespace RegistrationApp.DataAccess
                 return false;
             }
         }
+
+
+        public bool RemoveStudent(Student studentToRemove)
+        {
+            List<Student> allStudents = db.Students.ToList();
+
+            var matchingStudents = allStudents.Where(st => st.Id.Equals(studentToRemove.Id));
+            if (matchingStudents.Count() > 0)
+            {
+                db.Students.Remove(matchingStudents.First());
+                return db.SaveChanges() > 0;
+            }
+
+            else
+            {
+                Debug.WriteLine("Student was not found.");
+                return false;
+            }
+        }
         #endregion
 
 
@@ -332,6 +351,63 @@ namespace RegistrationApp.DataAccess
         #endregion
 
 
+        #region List Students Enrolled In Session
+        public List<Student> ListEnrolledStudents(int sessionId)
+        {   
+            List<Student> studentsEnrolled = new List<Student>();
+            int studentIdTemp;
+
+            var matchingSchedules = db.Schedules.Where(s => s.CourseSessionId.Equals(sessionId));
+
+            if (matchingSchedules.Count() > 0)
+            {
+                foreach (Schedule sch in matchingSchedules)
+                {
+                    studentIdTemp = sch.StudentId;
+                    var matchingStudents = db.Students.Where(st => st.Id.Equals(studentIdTemp));
+                    studentsEnrolled.Add(matchingStudents.First());
+                }
+
+                return studentsEnrolled;
+            }
+
+            else
+            {
+                Debug.WriteLine("There are no students enrolled in that session.");
+                return studentsEnrolled;
+            }
+        }
+        #endregion
+
+
+        #region List Course Details
+        public List<CourseSession> ListStudentSchedule(int studentId)
+        {
+            List<CourseSession> studentSchedule = new List<CourseSession>();
+            int courseSessionId;
+            var matchingSchedules = db.Schedules.Where(sch => sch.Student.Id.Equals(studentId));
+
+            if (matchingSchedules.Count() > 0)
+            {
+                foreach (Schedule sch in matchingSchedules)
+                {
+                    courseSessionId = sch.CourseSessionId;
+                    var matchingCourseSessions = db.CourseSessions.Where(cs => cs.Id.Equals(courseSessionId));
+                    studentSchedule.Add(matchingCourseSessions.First());
+                }
+
+                return studentSchedule;
+            }
+
+            else
+            {
+                Debug.WriteLine("The students is not registered for any courses.");
+                return studentSchedule;
+            }
+        }
+        #endregion
+
+
         #region Add A Course Bookmark
         public bool AddCourseBookmark(int studentId, int sessionId)
         {
@@ -373,8 +449,6 @@ namespace RegistrationApp.DataAccess
             } 
         }
         #endregion
-
-
 
     }
 }
