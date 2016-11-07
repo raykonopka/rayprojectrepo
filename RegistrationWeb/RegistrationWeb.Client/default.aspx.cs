@@ -17,6 +17,7 @@ namespace RegistrationWeb.Client
 
         protected void StudentLogin_Click(object sender, EventArgs e)
         {
+            //redirect
             Response.Redirect("~/student-login.aspx");
         }
 
